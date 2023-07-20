@@ -31,22 +31,25 @@ def get_number_of_lines():
     return lines
 
 def get_bet():
-  while True:
-        amount = input("What Would you like to bet? $")
+    while True:
+        amount = input("What Would you like to bet on each line? $")
         if amount.isdigit():
             amount = int(amount)
             if MIN_BET <= amount <= MAX_BET:
                 break
             else: 
-                print("Amount must be between.")
+                print(f"Amount must be between. ${MIN_BET} - ${MAX_BET}.")
         else:
             print("Please return a number")          
 
-        return amount
+    return amount
 
 def main():
-  balance = deposit()
-  lines = get_number_of_lines()
-  print(balance, lines)
+    balance = deposit()
+    lines = get_number_of_lines()
+    bet = get_bet()
+    total_bet = bet * lines
+    print(f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
 
-  main()
+
+main()
