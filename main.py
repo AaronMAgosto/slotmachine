@@ -12,3 +12,4 @@ def deposit():
             print("Please return a number")          
 
     return amount
+deposit()
