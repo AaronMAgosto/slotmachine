@@ -36,6 +36,13 @@ def get_slot_machine_spin(rows, cols, symbols):
 
         columns.append(column)
 
+    return columns
+
+def print_slot_machine(columns):
+    for row in range(len(columns[0])):
+        for column in columns:
+            print(column[row], "")
+
 # This function asks the user how much money they want to deposit into the slot machine
 def deposit():
     while True:
